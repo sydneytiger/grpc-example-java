@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package Sum;
+
+option java_package = "com.github.sydneytiger.grpc.sum";
+option java_multiple_files = true;
+
+message SumRequest {
+  float first_number = 1;
+  float second_number = 2;
+}
+
+message SumResponse {
+  float result = 1;
+}
+
+service SumService {
+  rpc Sum (SumRequest) returns (SumResponse) {};
+}
